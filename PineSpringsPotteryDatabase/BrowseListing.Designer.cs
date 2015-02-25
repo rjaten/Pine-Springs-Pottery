@@ -963,7 +963,7 @@
             // 
             // notesTextBox
             // 
-            this.notesTextBox.Location = new System.Drawing.Point(430, 191);
+            this.notesTextBox.Location = new System.Drawing.Point(397, 209);
             this.notesTextBox.MaxLength = 255;
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
@@ -977,6 +977,7 @@
             this.customerNoTextBox.Name = "customerNoTextBox";
             this.customerNoTextBox.Size = new System.Drawing.Size(76, 20);
             this.customerNoTextBox.TabIndex = 128;
+            this.customerNoTextBox.Text = "0";
             // 
             // txtCityCustomer
             // 
