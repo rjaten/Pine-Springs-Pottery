@@ -849,6 +849,190 @@ namespace PineSpringsPotteryDatabase
                 }
             }
         }
+
+        #region OrderForm
+
+        Order order = new Order();
+        private bool newOrder = false;
+        private bool editing = false;
+        string selectStatement = "";
+
+        //show line items in datagrid view
+        private void displayLineItems()
+        {
+
+            dgvOrders.Rows.Clear();
+
+            // For each item add it to the datagridview
+            foreach (LineItem item in order.lineItems)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(dgvOrders);
+                newRow.Cells[0].Value = DatabaseAccess.GetPieceByNo(item.pieceNo).pieceName;
+                newRow.Cells[1].Value = DatabaseAccess.GetPieceSizeByNo(item.pieceNo, item.sizeNo).totalPounds.ToString();
+                newRow.Cells[2].Value = DatabaseAccess.GetPatternByNo(item.patternNo).patternName;
+                newRow.Cells[3].Value = item.quantity.ToString();
+                newRow.Cells[4].Value = item.price.ToString("f2");
+                newRow.Cells[5].Value = item.totalPrice.ToString("f2");
+                newRow.Cells[6].Value = item.status.ToString();
+                newRow.Cells[7].Value = item.customizations;
+                newRow.Cells[8].Value = item.isGift;
+                newRow.Cells[9].Value = item.cardMessage;
+                dgvOrders.Rows.Add(newRow);
+            }
+        }
+
+        //Gets all existing items for current new order
+        private void getExistingItems()
+        {
+            order.lineItems = new List<LineItem>();
+            List<LineItem> items;
+
+            if (order.orderNo > 0)
+            {
+                items = DatabaseAccess.getLineItems(order.orderNo);
+
+                foreach (LineItem item in items)
+                {
+                    order.lineItems.Add(item);
+                }
+            }
+
+            displayLineItems();
+        }
+
+
+        //get info about order to store if changes are made
+        private void getOrderInfo()
+        {
+            
+            if (orderNoTextBox.Text != "")
+                order.orderNo = Convert.ToInt32(orderNoTextBox.Text);
+            if (order.orderNo > 0)
+            {
+                if (showNoTextBox.Text != "")
+                {
+                    order.showNo = Convert.ToInt32(showNoTextBox.Text);
+                    txtShowName.Text = DatabaseAccess.getShowNameByNo(order.showNo);
+                }
+                else
+                    txtShowName.Text = "";
+                if (customerNoTextBox.Text != "")
+                {
+                    order.customerNo = Convert.ToInt32(customerNoTextBox.Text);
+                    Customer customer = DatabaseAccess.getCustomerByNo(order.customerNo);
+                    txtName.Text = customer.firstName + " " + customer.lastName + " (" + customer.customerNo + ")";
+                    getCustomerCredit();
+                }
+                else
+                {
+                    txtName.Text = "";
+                }
+                order.orderDate = System.DateTime.Today;
+                order.notes = txtNotes.Text;
+                if (subtotalTextBox.Text != "")
+                    order.subtotal = Convert.ToDecimal(subtotalTextBox.Text);
+                if (discountTextBox.Text != "")
+                    order.discount = Convert.ToDecimal(discountTextBox.Text);
+                if (txtNewTotal.Text != "")
+                    order.newSubtotal = Convert.ToDecimal(txtNewTotal.Text);
+                order.taxable = taxableCheckBox.Checked;
+                if (taxTextBox.Text != "")
+                    order.tax = Convert.ToDecimal(subtotalTextBox.Text);
+                if (totalTextBox.Text != "")
+                    order.total = Convert.ToDecimal(totalTextBox.Text);
+                order.amountPaid = nudAmountPaid.Value;
+                cbPaidFull.Checked = (order.amountPaid >= order.total);
+                order.paymentType = (PaymentType)Enum.Parse(typeof(PaymentType), paymentTypeComboBox.Text);
+                order.checkNo = txtCheckNo.Text;
+                txtAmountDue.Text = (order.total - order.amountPaid).ToString("f2");
+                getExistingItems();
+            }
+        }
+
+        //calculate totals, taxes, discounts
+        private void CalculateCurrency()
+        {
+            if (editing || newOrder)
+            {
+                decimal subtotal = 0;
+                decimal discount = 0;
+                decimal newSubtotal = 0;
+                decimal tax = 0;
+                decimal total = 0;
+                if (dgvOrders.RowCount < 0)
+                    return;
+                foreach (LineItem item in order.lineItems)
+                {
+                    if (item.status != LineItemStatus.CANCELLED && item.status != LineItemStatus.RETURNED)
+                        subtotal += decimal.Round(item.totalPrice, 2);
+                }
+                subtotalTextBox.Text = subtotal.ToString("f2");
+
+                if (rbDollarDiscount.Checked)
+                    discount = Decimal.Round(nudDollarDiscount.Value + order.discount, 2);
+                discountTextBox.Text = discount.ToString("f2");
+
+                if (ccbCustomerCredit.Checked)
+                {
+                    discount += Decimal.Round(Convert.ToDecimal(txtCustomerCredit.Text), 2);
+                }
+
+                if (discount > subtotal)
+                {
+                    discount = decimal.Round(subtotal, 2);
+                }
+                discountTextBox.Text = discount.ToString("f2");
+
+                newSubtotal = Decimal.Round(subtotal - discount, 2);
+                txtNewTotal.Text = newSubtotal.ToString("f2");
+
+                if (taxableCheckBox.Checked)
+                    tax = Decimal.Round((newSubtotal) * 0.06m, 2);
+                else
+                    tax = 0;
+                taxTextBox.Text = tax.ToString("f2");
+
+                total = newSubtotal + tax + nudShipping.Value;
+                totalTextBox.Text = total.ToString("f2");
+
+                if (newOrder)
+                {
+                    if (cbPaidFull.Checked)
+                        nudAmountPaid.Value = total;
+                }
+
+                if (nudAmountPaid.Value >= total)
+                {
+                    txtAmountDue.Text = "0.00";
+                }
+                else
+                    txtAmountDue.Text = (total - nudAmountPaid.Value).ToString("f2");
+            }
+        }
+
+        //get credit for selected customer
+        private void getCustomerCredit()
+        {
+            if (order.customerNo > 0)
+            {
+                //Open connection if not already
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                selectStatement = "SELECT Credit FROM CUSTOMER WHERE CustomerNo = " + order.customerNo + ";";
+
+                //Create Command for select statement
+                OleDbCommand selectCmd = new OleDbCommand(selectStatement, connection);
+                txtCustomerCredit.Text = ((decimal)selectCmd.ExecuteScalar()).ToString("f2");
+                connection.Close();
+            }
+        }
+
+        #endregion
+
+
         #endregion
 
 

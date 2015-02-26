@@ -47,6 +47,16 @@
             System.Windows.Forms.Label taxExemptNoLabel;
             System.Windows.Forms.Label expenseTypeLabel;
             System.Windows.Forms.Label lblEndDateExpense;
+            System.Windows.Forms.Label lblShipping;
+            System.Windows.Forms.Label lblNewTotal;
+            System.Windows.Forms.Label paymentTypeLabel;
+            System.Windows.Forms.Label amountPaidLabel;
+            System.Windows.Forms.Label lblAmountDue;
+            System.Windows.Forms.Label totalLabel1;
+            System.Windows.Forms.Label taxLabel;
+            System.Windows.Forms.Label discountLabel;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label subtotalLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseListing));
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.GenerateReportButton = new System.Windows.Forms.Button();
@@ -82,6 +92,29 @@
             this.btnClearShows = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tabOrder = new System.Windows.Forms.TabPage();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.nudAmountPaid = new System.Windows.Forms.NumericUpDown();
+            this.nudShipping = new System.Windows.Forms.NumericUpDown();
+            this.lblCheckNo = new System.Windows.Forms.Label();
+            this.lblLeftOverCredit = new System.Windows.Forms.Label();
+            this.txtCheckNo = new System.Windows.Forms.TextBox();
+            this.cbPaidFull = new System.Windows.Forms.CheckBox();
+            this.lblLeftOverCreditLabel = new System.Windows.Forms.Label();
+            this.txtNewTotal = new System.Windows.Forms.TextBox();
+            this.txtCustomerCredit = new System.Windows.Forms.TextBox();
+            this.paymentTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.txtAmountDue = new System.Windows.Forms.TextBox();
+            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.taxTextBox = new System.Windows.Forms.TextBox();
+            this.discountTextBox = new System.Windows.Forms.TextBox();
+            this.subtotalTextBox = new System.Windows.Forms.TextBox();
+            this.ccbCustomerCredit = new System.Windows.Forms.CheckBox();
+            this.grpDiscount = new System.Windows.Forms.GroupBox();
+            this.nudDollarDiscount = new System.Windows.Forms.NumericUpDown();
+            this.rbDollarDiscount = new System.Windows.Forms.RadioButton();
+            this.taxableCheckBox = new System.Windows.Forms.CheckBox();
+            this.cbShipping = new System.Windows.Forms.CheckBox();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.nudSubtotal = new System.Windows.Forms.NumericUpDown();
             this.txtShowName = new System.Windows.Forms.TextBox();
@@ -90,7 +123,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClearOrders = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.tabCustomer = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -131,6 +163,9 @@
             this.lblSortByExpense = new System.Windows.Forms.Label();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
             this.btnSearchClear = new System.Windows.Forms.Button();
+            this.orderNoTextBox = new System.Windows.Forms.TextBox();
+            this.showNoTextBox = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             showTypeLabel = new System.Windows.Forms.Label();
@@ -150,14 +185,28 @@
             taxExemptNoLabel = new System.Windows.Forms.Label();
             expenseTypeLabel = new System.Windows.Forms.Label();
             lblEndDateExpense = new System.Windows.Forms.Label();
+            lblShipping = new System.Windows.Forms.Label();
+            lblNewTotal = new System.Windows.Forms.Label();
+            paymentTypeLabel = new System.Windows.Forms.Label();
+            amountPaidLabel = new System.Windows.Forms.Label();
+            lblAmountDue = new System.Windows.Forms.Label();
+            totalLabel1 = new System.Windows.Forms.Label();
+            taxLabel = new System.Windows.Forms.Label();
+            discountLabel = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            subtotalLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.tabShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShows)).BeginInit();
             this.guestListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuestList)).BeginInit();
             this.tabOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSubtotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountPaid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudShipping)).BeginInit();
+            this.grpDiscount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDollarDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSubtotal)).BeginInit();
             this.tabCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalSpent)).BeginInit();
@@ -336,6 +385,96 @@
             lblEndDateExpense.Name = "lblEndDateExpense";
             lblEndDateExpense.Size = new System.Drawing.Size(0, 13);
             lblEndDateExpense.TabIndex = 6;
+            // 
+            // lblShipping
+            // 
+            lblShipping.AutoSize = true;
+            lblShipping.Location = new System.Drawing.Point(249, 110);
+            lblShipping.Name = "lblShipping";
+            lblShipping.Size = new System.Drawing.Size(51, 13);
+            lblShipping.TabIndex = 123;
+            lblShipping.Text = "Shipping:";
+            // 
+            // lblNewTotal
+            // 
+            lblNewTotal.AutoSize = true;
+            lblNewTotal.Location = new System.Drawing.Point(241, 60);
+            lblNewTotal.Name = "lblNewTotal";
+            lblNewTotal.Size = new System.Drawing.Size(59, 13);
+            lblNewTotal.TabIndex = 117;
+            lblNewTotal.Text = "New Total:";
+            // 
+            // paymentTypeLabel
+            // 
+            paymentTypeLabel.AutoSize = true;
+            paymentTypeLabel.Location = new System.Drawing.Point(445, 64);
+            paymentTypeLabel.Name = "paymentTypeLabel";
+            paymentTypeLabel.Size = new System.Drawing.Size(78, 13);
+            paymentTypeLabel.TabIndex = 113;
+            paymentTypeLabel.Text = "Payment Type:";
+            // 
+            // amountPaidLabel
+            // 
+            amountPaidLabel.AutoSize = true;
+            amountPaidLabel.Location = new System.Drawing.Point(443, 38);
+            amountPaidLabel.Name = "amountPaidLabel";
+            amountPaidLabel.Size = new System.Drawing.Size(70, 13);
+            amountPaidLabel.TabIndex = 112;
+            amountPaidLabel.Text = "Amount Paid:";
+            // 
+            // lblAmountDue
+            // 
+            lblAmountDue.AutoSize = true;
+            lblAmountDue.Location = new System.Drawing.Point(444, 114);
+            lblAmountDue.Name = "lblAmountDue";
+            lblAmountDue.Size = new System.Drawing.Size(69, 13);
+            lblAmountDue.TabIndex = 110;
+            lblAmountDue.Text = "Amount Due:";
+            // 
+            // totalLabel1
+            // 
+            totalLabel1.AutoSize = true;
+            totalLabel1.Location = new System.Drawing.Point(266, 137);
+            totalLabel1.Name = "totalLabel1";
+            totalLabel1.Size = new System.Drawing.Size(34, 13);
+            totalLabel1.TabIndex = 108;
+            totalLabel1.Text = "Total:";
+            // 
+            // taxLabel
+            // 
+            taxLabel.AutoSize = true;
+            taxLabel.Location = new System.Drawing.Point(272, 85);
+            taxLabel.Name = "taxLabel";
+            taxLabel.Size = new System.Drawing.Size(28, 13);
+            taxLabel.TabIndex = 105;
+            taxLabel.Text = "Tax:";
+            // 
+            // discountLabel
+            // 
+            discountLabel.AutoSize = true;
+            discountLabel.Location = new System.Drawing.Point(216, 34);
+            discountLabel.Name = "discountLabel";
+            discountLabel.Size = new System.Drawing.Size(84, 13);
+            discountLabel.TabIndex = 104;
+            discountLabel.Text = "Discount/Credit:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(13, 93);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(38, 13);
+            label4.TabIndex = 129;
+            label4.Text = "Notes:";
+            // 
+            // subtotalLabel1
+            // 
+            subtotalLabel1.AutoSize = true;
+            subtotalLabel1.Location = new System.Drawing.Point(251, 8);
+            subtotalLabel1.Name = "subtotalLabel1";
+            subtotalLabel1.Size = new System.Drawing.Size(49, 13);
+            subtotalLabel1.TabIndex = 130;
+            subtotalLabel1.Text = "Subtotal:";
             // 
             // dgvCustomers
             // 
@@ -673,6 +812,40 @@
             // tabOrder
             // 
             this.tabOrder.BackColor = System.Drawing.SystemColors.Control;
+            this.tabOrder.Controls.Add(this.txtNotes);
+            this.tabOrder.Controls.Add(this.txtName);
+            this.tabOrder.Controls.Add(this.showNoTextBox);
+            this.tabOrder.Controls.Add(this.orderNoTextBox);
+            this.tabOrder.Controls.Add(subtotalLabel1);
+            this.tabOrder.Controls.Add(label4);
+            this.tabOrder.Controls.Add(this.nudAmountPaid);
+            this.tabOrder.Controls.Add(this.nudShipping);
+            this.tabOrder.Controls.Add(this.lblCheckNo);
+            this.tabOrder.Controls.Add(lblShipping);
+            this.tabOrder.Controls.Add(this.lblLeftOverCredit);
+            this.tabOrder.Controls.Add(this.txtCheckNo);
+            this.tabOrder.Controls.Add(this.cbPaidFull);
+            this.tabOrder.Controls.Add(this.lblLeftOverCreditLabel);
+            this.tabOrder.Controls.Add(lblNewTotal);
+            this.tabOrder.Controls.Add(this.txtNewTotal);
+            this.tabOrder.Controls.Add(this.txtCustomerCredit);
+            this.tabOrder.Controls.Add(paymentTypeLabel);
+            this.tabOrder.Controls.Add(this.paymentTypeComboBox);
+            this.tabOrder.Controls.Add(amountPaidLabel);
+            this.tabOrder.Controls.Add(lblAmountDue);
+            this.tabOrder.Controls.Add(this.txtAmountDue);
+            this.tabOrder.Controls.Add(totalLabel1);
+            this.tabOrder.Controls.Add(this.totalTextBox);
+            this.tabOrder.Controls.Add(taxLabel);
+            this.tabOrder.Controls.Add(this.taxTextBox);
+            this.tabOrder.Controls.Add(discountLabel);
+            this.tabOrder.Controls.Add(this.discountTextBox);
+            this.tabOrder.Controls.Add(this.subtotalTextBox);
+            this.tabOrder.Controls.Add(this.ccbCustomerCredit);
+            this.tabOrder.Controls.Add(this.grpDiscount);
+            this.tabOrder.Controls.Add(this.taxableCheckBox);
+            this.tabOrder.Controls.Add(this.cbShipping);
+            this.tabOrder.Controls.Add(this.dgvOrders);
             this.tabOrder.Controls.Add(this.button2);
             this.tabOrder.Controls.Add(this.nudSubtotal);
             this.tabOrder.Controls.Add(this.txtShowName);
@@ -681,7 +854,6 @@
             this.tabOrder.Controls.Add(this.label1);
             this.tabOrder.Controls.Add(this.btnClearOrders);
             this.tabOrder.Controls.Add(this.label5);
-            this.tabOrder.Controls.Add(this.dgvOrders);
             this.tabOrder.Location = new System.Drawing.Point(4, 22);
             this.tabOrder.Name = "tabOrder";
             this.tabOrder.Padding = new System.Windows.Forms.Padding(3);
@@ -689,10 +861,238 @@
             this.tabOrder.TabIndex = 1;
             this.tabOrder.Text = "Orders";
             // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(27, 109);
+            this.txtNotes.MaxLength = 255;
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(186, 99);
+            this.txtNotes.TabIndex = 128;
+            // 
+            // nudAmountPaid
+            // 
+            this.nudAmountPaid.DecimalPlaces = 2;
+            this.nudAmountPaid.Location = new System.Drawing.Point(530, 31);
+            this.nudAmountPaid.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudAmountPaid.Name = "nudAmountPaid";
+            this.nudAmountPaid.Size = new System.Drawing.Size(120, 20);
+            this.nudAmountPaid.TabIndex = 127;
+            // 
+            // nudShipping
+            // 
+            this.nudShipping.DecimalPlaces = 2;
+            this.nudShipping.Location = new System.Drawing.Point(306, 108);
+            this.nudShipping.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudShipping.Name = "nudShipping";
+            this.nudShipping.Size = new System.Drawing.Size(100, 20);
+            this.nudShipping.TabIndex = 126;
+            // 
+            // lblCheckNo
+            // 
+            this.lblCheckNo.AutoSize = true;
+            this.lblCheckNo.Location = new System.Drawing.Point(448, 87);
+            this.lblCheckNo.Name = "lblCheckNo";
+            this.lblCheckNo.Size = new System.Drawing.Size(58, 13);
+            this.lblCheckNo.TabIndex = 125;
+            this.lblCheckNo.Text = "Check No:";
+            // 
+            // lblLeftOverCredit
+            // 
+            this.lblLeftOverCredit.AutoSize = true;
+            this.lblLeftOverCredit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblLeftOverCredit.Location = new System.Drawing.Point(613, 136);
+            this.lblLeftOverCredit.Name = "lblLeftOverCredit";
+            this.lblLeftOverCredit.Size = new System.Drawing.Size(28, 13);
+            this.lblLeftOverCredit.TabIndex = 122;
+            this.lblLeftOverCredit.Text = "0.00";
+            // 
+            // txtCheckNo
+            // 
+            this.txtCheckNo.Location = new System.Drawing.Point(529, 86);
+            this.txtCheckNo.MaxLength = 20;
+            this.txtCheckNo.Name = "txtCheckNo";
+            this.txtCheckNo.Size = new System.Drawing.Size(121, 20);
+            this.txtCheckNo.TabIndex = 121;
+            // 
+            // cbPaidFull
+            // 
+            this.cbPaidFull.AutoSize = true;
+            this.cbPaidFull.Location = new System.Drawing.Point(502, 8);
+            this.cbPaidFull.Name = "cbPaidFull";
+            this.cbPaidFull.Size = new System.Drawing.Size(80, 17);
+            this.cbPaidFull.TabIndex = 120;
+            this.cbPaidFull.Text = "Paid in full?";
+            this.cbPaidFull.UseVisualStyleBackColor = true;
+            // 
+            // lblLeftOverCreditLabel
+            // 
+            this.lblLeftOverCreditLabel.AutoSize = true;
+            this.lblLeftOverCreditLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblLeftOverCreditLabel.Location = new System.Drawing.Point(526, 135);
+            this.lblLeftOverCreditLabel.Name = "lblLeftOverCreditLabel";
+            this.lblLeftOverCreditLabel.Size = new System.Drawing.Size(81, 13);
+            this.lblLeftOverCreditLabel.TabIndex = 119;
+            this.lblLeftOverCreditLabel.Text = "Left Over Credit";
+            // 
+            // txtNewTotal
+            // 
+            this.txtNewTotal.Location = new System.Drawing.Point(306, 57);
+            this.txtNewTotal.Name = "txtNewTotal";
+            this.txtNewTotal.ReadOnly = true;
+            this.txtNewTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtNewTotal.TabIndex = 118;
+            this.txtNewTotal.Text = "0.00";
+            // 
+            // txtCustomerCredit
+            // 
+            this.txtCustomerCredit.Location = new System.Drawing.Point(137, 63);
+            this.txtCustomerCredit.Name = "txtCustomerCredit";
+            this.txtCustomerCredit.ReadOnly = true;
+            this.txtCustomerCredit.Size = new System.Drawing.Size(47, 20);
+            this.txtCustomerCredit.TabIndex = 116;
+            this.txtCustomerCredit.Text = "0.00";
+            // 
+            // paymentTypeComboBox
+            // 
+            this.paymentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.paymentTypeComboBox.FormattingEnabled = true;
+            this.paymentTypeComboBox.Location = new System.Drawing.Point(529, 58);
+            this.paymentTypeComboBox.Name = "paymentTypeComboBox";
+            this.paymentTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.paymentTypeComboBox.TabIndex = 114;
+            // 
+            // txtAmountDue
+            // 
+            this.txtAmountDue.Location = new System.Drawing.Point(529, 112);
+            this.txtAmountDue.Name = "txtAmountDue";
+            this.txtAmountDue.ReadOnly = true;
+            this.txtAmountDue.Size = new System.Drawing.Size(121, 20);
+            this.txtAmountDue.TabIndex = 111;
+            // 
+            // totalTextBox
+            // 
+            this.totalTextBox.Location = new System.Drawing.Point(306, 134);
+            this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.ReadOnly = true;
+            this.totalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.totalTextBox.TabIndex = 109;
+            this.totalTextBox.Text = "0.00";
+            // 
+            // taxTextBox
+            // 
+            this.taxTextBox.Location = new System.Drawing.Point(306, 82);
+            this.taxTextBox.Name = "taxTextBox";
+            this.taxTextBox.ReadOnly = true;
+            this.taxTextBox.Size = new System.Drawing.Size(100, 20);
+            this.taxTextBox.TabIndex = 107;
+            this.taxTextBox.Text = "0.00";
+            // 
+            // discountTextBox
+            // 
+            this.discountTextBox.Location = new System.Drawing.Point(306, 31);
+            this.discountTextBox.Name = "discountTextBox";
+            this.discountTextBox.ReadOnly = true;
+            this.discountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.discountTextBox.TabIndex = 106;
+            this.discountTextBox.Text = "0.00";
+            // 
+            // subtotalTextBox
+            // 
+            this.subtotalTextBox.Location = new System.Drawing.Point(306, 5);
+            this.subtotalTextBox.Name = "subtotalTextBox";
+            this.subtotalTextBox.ReadOnly = true;
+            this.subtotalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.subtotalTextBox.TabIndex = 103;
+            this.subtotalTextBox.Text = "0.00";
+            // 
+            // ccbCustomerCredit
+            // 
+            this.ccbCustomerCredit.AutoSize = true;
+            this.ccbCustomerCredit.Location = new System.Drawing.Point(13, 66);
+            this.ccbCustomerCredit.Name = "ccbCustomerCredit";
+            this.ccbCustomerCredit.Size = new System.Drawing.Size(121, 17);
+            this.ccbCustomerCredit.TabIndex = 102;
+            this.ccbCustomerCredit.Text = "Use Available Credit";
+            this.ccbCustomerCredit.UseVisualStyleBackColor = true;
+            // 
+            // grpDiscount
+            // 
+            this.grpDiscount.Controls.Add(this.nudDollarDiscount);
+            this.grpDiscount.Controls.Add(this.rbDollarDiscount);
+            this.grpDiscount.Location = new System.Drawing.Point(6, 6);
+            this.grpDiscount.Name = "grpDiscount";
+            this.grpDiscount.Size = new System.Drawing.Size(178, 52);
+            this.grpDiscount.TabIndex = 101;
+            this.grpDiscount.TabStop = false;
+            this.grpDiscount.Text = "Discount/Host Credit";
+            // 
+            // nudDollarDiscount
+            // 
+            this.nudDollarDiscount.DecimalPlaces = 2;
+            this.nudDollarDiscount.Location = new System.Drawing.Point(103, 26);
+            this.nudDollarDiscount.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudDollarDiscount.Name = "nudDollarDiscount";
+            this.nudDollarDiscount.Size = new System.Drawing.Size(59, 20);
+            this.nudDollarDiscount.TabIndex = 55;
+            // 
+            // rbDollarDiscount
+            // 
+            this.rbDollarDiscount.AutoSize = true;
+            this.rbDollarDiscount.Location = new System.Drawing.Point(6, 24);
+            this.rbDollarDiscount.Name = "rbDollarDiscount";
+            this.rbDollarDiscount.Size = new System.Drawing.Size(91, 17);
+            this.rbDollarDiscount.TabIndex = 2;
+            this.rbDollarDiscount.Text = "Dollar Amount";
+            this.rbDollarDiscount.UseVisualStyleBackColor = true;
+            // 
+            // taxableCheckBox
+            // 
+            this.taxableCheckBox.Checked = true;
+            this.taxableCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.taxableCheckBox.Location = new System.Drawing.Point(254, 80);
+            this.taxableCheckBox.Name = "taxableCheckBox";
+            this.taxableCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.taxableCheckBox.TabIndex = 115;
+            this.taxableCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // cbShipping
+            // 
+            this.cbShipping.Location = new System.Drawing.Point(233, 105);
+            this.cbShipping.Name = "cbShipping";
+            this.cbShipping.Size = new System.Drawing.Size(104, 24);
+            this.cbShipping.TabIndex = 124;
+            this.cbShipping.UseVisualStyleBackColor = true;
+            // 
+            // dgvOrders
+            // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(16, 219);
+            this.dgvOrders.MultiSelect = false;
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.Size = new System.Drawing.Size(749, 151);
+            this.dgvOrders.TabIndex = 0;
+            this.dgvOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellDoubleClick);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.OliveDrab;
-            this.button2.Location = new System.Drawing.Point(528, 15);
+            this.button2.Location = new System.Drawing.Point(610, 190);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 23);
             this.button2.TabIndex = 48;
@@ -703,7 +1103,7 @@
             // nudSubtotal
             // 
             this.nudSubtotal.DecimalPlaces = 2;
-            this.nudSubtotal.Location = new System.Drawing.Point(127, 47);
+            this.nudSubtotal.Location = new System.Drawing.Point(229, 284);
             this.nudSubtotal.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -716,7 +1116,7 @@
             // 
             // txtShowName
             // 
-            this.txtShowName.Location = new System.Drawing.Point(104, 21);
+            this.txtShowName.Location = new System.Drawing.Point(206, 258);
             this.txtShowName.Name = "txtShowName";
             this.txtShowName.Size = new System.Drawing.Size(129, 20);
             this.txtShowName.TabIndex = 46;
@@ -725,7 +1125,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 25);
+            this.label8.Location = new System.Drawing.Point(115, 262);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 13);
             this.label8.TabIndex = 45;
@@ -734,7 +1134,7 @@
             // cbTaxExemptOrders
             // 
             this.cbTaxExemptOrders.AutoSize = true;
-            this.cbTaxExemptOrders.Location = new System.Drawing.Point(239, 25);
+            this.cbTaxExemptOrders.Location = new System.Drawing.Point(341, 262);
             this.cbTaxExemptOrders.Name = "cbTaxExemptOrders";
             this.cbTaxExemptOrders.Size = new System.Drawing.Size(136, 17);
             this.cbTaxExemptOrders.TabIndex = 40;
@@ -745,7 +1145,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 48);
+            this.label1.Location = new System.Drawing.Point(115, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 37;
@@ -754,7 +1154,7 @@
             // btnClearOrders
             // 
             this.btnClearOrders.BackColor = System.Drawing.Color.Tan;
-            this.btnClearOrders.Location = new System.Drawing.Point(16, 73);
+            this.btnClearOrders.Location = new System.Drawing.Point(118, 310);
             this.btnClearOrders.Name = "btnClearOrders";
             this.btnClearOrders.Size = new System.Drawing.Size(217, 23);
             this.btnClearOrders.TabIndex = 30;
@@ -765,24 +1165,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 3);
+            this.label5.Location = new System.Drawing.Point(110, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 29;
             this.label5.Text = "Sort By...";
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.AllowUserToAddRows = false;
-            this.dgvOrders.AllowUserToDeleteRows = false;
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(16, 140);
-            this.dgvOrders.MultiSelect = false;
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.ReadOnly = true;
-            this.dgvOrders.Size = new System.Drawing.Size(667, 230);
-            this.dgvOrders.TabIndex = 0;
-            this.dgvOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellDoubleClick);
             // 
             // tabCustomer
             // 
@@ -1211,6 +1598,30 @@
             this.btnSearchClear.UseVisualStyleBackColor = true;
             this.btnSearchClear.Click += new System.EventHandler(this.btnSearchClear_Click);
             // 
+            // orderNoTextBox
+            // 
+            this.orderNoTextBox.Location = new System.Drawing.Point(48, 156);
+            this.orderNoTextBox.Name = "orderNoTextBox";
+            this.orderNoTextBox.ReadOnly = true;
+            this.orderNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.orderNoTextBox.TabIndex = 131;
+            // 
+            // showNoTextBox
+            // 
+            this.showNoTextBox.Location = new System.Drawing.Point(84, 128);
+            this.showNoTextBox.Name = "showNoTextBox";
+            this.showNoTextBox.ReadOnly = true;
+            this.showNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.showNoTextBox.TabIndex = 132;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(83, 155);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 133;
+            // 
             // BrowseListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1235,8 +1646,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuestList)).EndInit();
             this.tabOrder.ResumeLayout(false);
             this.tabOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSubtotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountPaid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudShipping)).EndInit();
+            this.grpDiscount.ResumeLayout(false);
+            this.grpDiscount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDollarDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSubtotal)).EndInit();
             this.tabCustomer.ResumeLayout(false);
             this.tabCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditTextBox)).EndInit();
@@ -1335,5 +1751,30 @@
         private System.Windows.Forms.Label lblSortByExpense;
         private System.Windows.Forms.DataGridView dgvExpenses;
         private System.Windows.Forms.Button btnSearchClear;
+        private System.Windows.Forms.NumericUpDown nudAmountPaid;
+        private System.Windows.Forms.NumericUpDown nudShipping;
+        private System.Windows.Forms.Label lblCheckNo;
+        private System.Windows.Forms.Label lblLeftOverCredit;
+        private System.Windows.Forms.TextBox txtCheckNo;
+        private System.Windows.Forms.CheckBox cbPaidFull;
+        private System.Windows.Forms.Label lblLeftOverCreditLabel;
+        private System.Windows.Forms.TextBox txtNewTotal;
+        private System.Windows.Forms.TextBox txtCustomerCredit;
+        private System.Windows.Forms.ComboBox paymentTypeComboBox;
+        private System.Windows.Forms.TextBox txtAmountDue;
+        private System.Windows.Forms.TextBox totalTextBox;
+        private System.Windows.Forms.TextBox taxTextBox;
+        private System.Windows.Forms.TextBox discountTextBox;
+        private System.Windows.Forms.TextBox subtotalTextBox;
+        private System.Windows.Forms.CheckBox ccbCustomerCredit;
+        private System.Windows.Forms.GroupBox grpDiscount;
+        private System.Windows.Forms.NumericUpDown nudDollarDiscount;
+        private System.Windows.Forms.RadioButton rbDollarDiscount;
+        private System.Windows.Forms.CheckBox taxableCheckBox;
+        private System.Windows.Forms.CheckBox cbShipping;
+        private System.Windows.Forms.TextBox txtNotes;
+        private System.Windows.Forms.TextBox orderNoTextBox;
+        private System.Windows.Forms.TextBox showNoTextBox;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

@@ -138,7 +138,7 @@
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(11, 72);
+            firstNameLabel.Location = new System.Drawing.Point(17, 67);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new System.Drawing.Size(85, 13);
             firstNameLabel.TabIndex = 29;
@@ -156,7 +156,7 @@
             // orderDateLabel1
             // 
             orderDateLabel1.AutoSize = true;
-            orderDateLabel1.Location = new System.Drawing.Point(11, 101);
+            orderDateLabel1.Location = new System.Drawing.Point(17, 96);
             orderDateLabel1.Name = "orderDateLabel1";
             orderDateLabel1.Size = new System.Drawing.Size(62, 13);
             orderDateLabel1.TabIndex = 67;
@@ -165,7 +165,7 @@
             // showNoLabel
             // 
             showNoLabel.AutoSize = true;
-            showNoLabel.Location = new System.Drawing.Point(11, 41);
+            showNoLabel.Location = new System.Drawing.Point(17, 36);
             showNoLabel.Name = "showNoLabel";
             showNoLabel.Size = new System.Drawing.Size(68, 13);
             showNoLabel.TabIndex = 68;
@@ -254,7 +254,7 @@
             // 
             // btnSelectCustomer
             // 
-            this.btnSelectCustomer.Location = new System.Drawing.Point(247, 68);
+            this.btnSelectCustomer.Location = new System.Drawing.Point(253, 63);
             this.btnSelectCustomer.Name = "btnSelectCustomer";
             this.btnSelectCustomer.Size = new System.Drawing.Size(97, 23);
             this.btnSelectCustomer.TabIndex = 3;
@@ -274,7 +274,7 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(47, 137);
+            this.btnAddItem.Location = new System.Drawing.Point(53, 132);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 7;
@@ -284,7 +284,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(102, 69);
+            this.txtName.Location = new System.Drawing.Point(108, 64);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(139, 20);
             this.txtName.TabIndex = 2;
@@ -306,7 +306,7 @@
             this.Customizations,
             this.isGift,
             this.CardMessage});
-            this.dgvLineItems.Location = new System.Drawing.Point(12, 166);
+            this.dgvLineItems.Location = new System.Drawing.Point(14, 165);
             this.dgvLineItems.MultiSelect = false;
             this.dgvLineItems.Name = "dgvLineItems";
             this.dgvLineItems.Size = new System.Drawing.Size(873, 201);
@@ -402,7 +402,7 @@
             // txtNotes
             // 
             this.txtNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "Notes", true));
-            this.txtNotes.Location = new System.Drawing.Point(530, 41);
+            this.txtNotes.Location = new System.Drawing.Point(545, 58);
             this.txtNotes.MaxLength = 255;
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
@@ -422,7 +422,7 @@
             // 
             // btnAddNewCustomer
             // 
-            this.btnAddNewCustomer.Location = new System.Drawing.Point(350, 68);
+            this.btnAddNewCustomer.Location = new System.Drawing.Point(356, 63);
             this.btnAddNewCustomer.Name = "btnAddNewCustomer";
             this.btnAddNewCustomer.Size = new System.Drawing.Size(92, 23);
             this.btnAddNewCustomer.TabIndex = 4;
@@ -511,7 +511,7 @@
             // 
             // btnSelectShow
             // 
-            this.btnSelectShow.Location = new System.Drawing.Point(247, 38);
+            this.btnSelectShow.Location = new System.Drawing.Point(253, 33);
             this.btnSelectShow.Name = "btnSelectShow";
             this.btnSelectShow.Size = new System.Drawing.Size(75, 23);
             this.btnSelectShow.TabIndex = 1;
@@ -532,7 +532,7 @@
             // orderNoTextBox
             // 
             this.orderNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "OrderNo", true));
-            this.orderNoTextBox.Location = new System.Drawing.Point(585, 89);
+            this.orderNoTextBox.Location = new System.Drawing.Point(598, 101);
             this.orderNoTextBox.Name = "orderNoTextBox";
             this.orderNoTextBox.ReadOnly = true;
             this.orderNoTextBox.Size = new System.Drawing.Size(100, 20);
@@ -541,7 +541,7 @@
             // orderDateDateTimePicker
             // 
             this.orderDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ordersBindingSource, "OrderDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.orderDateDateTimePicker.Location = new System.Drawing.Point(102, 101);
+            this.orderDateDateTimePicker.Location = new System.Drawing.Point(108, 96);
             this.orderDateDateTimePicker.Name = "orderDateDateTimePicker";
             this.orderDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.orderDateDateTimePicker.TabIndex = 5;
@@ -552,7 +552,7 @@
             // showNoTextBox
             // 
             this.showNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "ShowNo", true));
-            this.showNoTextBox.Location = new System.Drawing.Point(102, 41);
+            this.showNoTextBox.Location = new System.Drawing.Point(108, 36);
             this.showNoTextBox.Name = "showNoTextBox";
             this.showNoTextBox.ReadOnly = true;
             this.showNoTextBox.Size = new System.Drawing.Size(139, 20);
@@ -840,7 +840,7 @@
             // customerNoTextBox
             // 
             this.customerNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordersBindingSource, "CustomerNo", true));
-            this.customerNoTextBox.Location = new System.Drawing.Point(102, 69);
+            this.customerNoTextBox.Location = new System.Drawing.Point(108, 64);
             this.customerNoTextBox.Name = "customerNoTextBox";
             this.customerNoTextBox.ReadOnly = true;
             this.customerNoTextBox.Size = new System.Drawing.Size(100, 20);
@@ -879,7 +879,7 @@
             // 
             // txtShowName
             // 
-            this.txtShowName.Location = new System.Drawing.Point(102, 41);
+            this.txtShowName.Location = new System.Drawing.Point(108, 36);
             this.txtShowName.Name = "txtShowName";
             this.txtShowName.ReadOnly = true;
             this.txtShowName.Size = new System.Drawing.Size(139, 20);
@@ -887,7 +887,7 @@
             // 
             // btnRemoveCustomer
             // 
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(449, 68);
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(455, 63);
             this.btnRemoveCustomer.Name = "btnRemoveCustomer";
             this.btnRemoveCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveCustomer.TabIndex = 1001;
@@ -897,7 +897,7 @@
             // 
             // btnRemoveShow
             // 
-            this.btnRemoveShow.Location = new System.Drawing.Point(328, 38);
+            this.btnRemoveShow.Location = new System.Drawing.Point(334, 33);
             this.btnRemoveShow.Name = "btnRemoveShow";
             this.btnRemoveShow.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveShow.TabIndex = 1002;

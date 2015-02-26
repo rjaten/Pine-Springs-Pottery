@@ -147,6 +147,7 @@
     <Compile Include="NewShow.Designer.cs">
       <DependentUpon>NewShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderMethods.cs" />
     <Compile Include="PineSpringsPotteryDataSet.cs">
       <DependentUpon>PineSpringsPotteryDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
