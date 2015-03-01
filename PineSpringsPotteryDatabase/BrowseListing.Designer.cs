@@ -36,7 +36,6 @@
             System.Windows.Forms.Label totalSalesLabel;
             System.Windows.Forms.Label notesLabel;
             System.Windows.Forms.Label creditLabel;
-            System.Windows.Forms.Label isHostLabel;
             System.Windows.Forms.Label totalSpentLabel;
             System.Windows.Forms.Label patternPreferenecLabel;
             System.Windows.Forms.Label mobilePhoneLabel;
@@ -92,8 +91,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.tabCustomer = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.creditTextBox = new System.Windows.Forms.NumericUpDown();
             this.cboPatternPreference = new System.Windows.Forms.ComboBox();
@@ -139,7 +139,6 @@
             totalSalesLabel = new System.Windows.Forms.Label();
             notesLabel = new System.Windows.Forms.Label();
             creditLabel = new System.Windows.Forms.Label();
-            isHostLabel = new System.Windows.Forms.Label();
             totalSpentLabel = new System.Windows.Forms.Label();
             patternPreferenecLabel = new System.Windows.Forms.Label();
             mobilePhoneLabel = new System.Windows.Forms.Label();
@@ -224,100 +223,101 @@
             // notesLabel
             // 
             notesLabel.AutoSize = true;
-            notesLabel.Location = new System.Drawing.Point(323, 194);
+            notesLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            notesLabel.Location = new System.Drawing.Point(301, 196);
             notesLabel.Name = "notesLabel";
-            notesLabel.Size = new System.Drawing.Size(38, 13);
+            notesLabel.Size = new System.Drawing.Size(54, 16);
             notesLabel.TabIndex = 125;
             notesLabel.Text = "Notes:";
             // 
             // creditLabel
             // 
             creditLabel.AutoSize = true;
-            creditLabel.Location = new System.Drawing.Point(107, 254);
+            creditLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            creditLabel.Location = new System.Drawing.Point(15, 284);
             creditLabel.Name = "creditLabel";
-            creditLabel.Size = new System.Drawing.Size(37, 13);
+            creditLabel.Size = new System.Drawing.Size(58, 16);
             creditLabel.TabIndex = 124;
             creditLabel.Text = "Credit:";
-            // 
-            // isHostLabel
-            // 
-            isHostLabel.AutoSize = true;
-            isHostLabel.Location = new System.Drawing.Point(107, 224);
-            isHostLabel.Name = "isHostLabel";
-            isHostLabel.Size = new System.Drawing.Size(32, 13);
-            isHostLabel.TabIndex = 122;
-            isHostLabel.Text = "Host:";
             // 
             // totalSpentLabel
             // 
             totalSpentLabel.AutoSize = true;
-            totalSpentLabel.Location = new System.Drawing.Point(107, 197);
+            totalSpentLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalSpentLabel.Location = new System.Drawing.Point(15, 257);
             totalSpentLabel.Name = "totalSpentLabel";
-            totalSpentLabel.Size = new System.Drawing.Size(65, 13);
+            totalSpentLabel.Size = new System.Drawing.Size(96, 16);
             totalSpentLabel.TabIndex = 131;
             totalSpentLabel.Text = "Total Spent:";
             // 
             // patternPreferenecLabel
             // 
             patternPreferenecLabel.AutoSize = true;
-            patternPreferenecLabel.Location = new System.Drawing.Point(104, 165);
+            patternPreferenecLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            patternPreferenecLabel.Location = new System.Drawing.Point(12, 201);
             patternPreferenecLabel.Name = "patternPreferenecLabel";
-            patternPreferenecLabel.Size = new System.Drawing.Size(99, 13);
+            patternPreferenecLabel.Size = new System.Drawing.Size(148, 16);
             patternPreferenecLabel.TabIndex = 117;
             patternPreferenecLabel.Text = "Pattern Preference:";
             // 
             // mobilePhoneLabel
             // 
             mobilePhoneLabel.AutoSize = true;
-            mobilePhoneLabel.Location = new System.Drawing.Point(326, 105);
+            mobilePhoneLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mobilePhoneLabel.Location = new System.Drawing.Point(246, 126);
             mobilePhoneLabel.Name = "mobilePhoneLabel";
-            mobilePhoneLabel.Size = new System.Drawing.Size(75, 13);
+            mobilePhoneLabel.Size = new System.Drawing.Size(90, 16);
             mobilePhoneLabel.TabIndex = 112;
-            mobilePhoneLabel.Text = "Mobile Phone:";
+            mobilePhoneLabel.Text = "Cell Phone:";
             // 
             // perferedPhoneLabel
             // 
             perferedPhoneLabel.AutoSize = true;
-            perferedPhoneLabel.Location = new System.Drawing.Point(109, 110);
+            perferedPhoneLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            perferedPhoneLabel.Location = new System.Drawing.Point(15, 127);
             perferedPhoneLabel.Name = "perferedPhoneLabel";
-            perferedPhoneLabel.Size = new System.Drawing.Size(72, 13);
+            perferedPhoneLabel.Size = new System.Drawing.Size(106, 16);
             perferedPhoneLabel.TabIndex = 110;
             perferedPhoneLabel.Text = "Home Phone:";
             // 
             // zipLabel
             // 
             zipLabel.AutoSize = true;
-            zipLabel.Location = new System.Drawing.Point(326, 79);
+            zipLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            zipLabel.Location = new System.Drawing.Point(275, 72);
             zipLabel.Name = "zipLabel";
-            zipLabel.Size = new System.Drawing.Size(25, 13);
+            zipLabel.Size = new System.Drawing.Size(36, 16);
             zipLabel.TabIndex = 108;
             zipLabel.Text = "Zip:";
             // 
             // stateLabel
             // 
             stateLabel.AutoSize = true;
-            stateLabel.Location = new System.Drawing.Point(109, 80);
+            stateLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            stateLabel.Location = new System.Drawing.Point(164, 76);
             stateLabel.Name = "stateLabel";
-            stateLabel.Size = new System.Drawing.Size(35, 13);
+            stateLabel.Size = new System.Drawing.Size(49, 16);
             stateLabel.TabIndex = 106;
             stateLabel.Text = "State:";
             // 
             // streetAddressLabel
             // 
             streetAddressLabel.AutoSize = true;
-            streetAddressLabel.Location = new System.Drawing.Point(109, 52);
+            streetAddressLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            streetAddressLabel.Location = new System.Drawing.Point(15, 46);
             streetAddressLabel.Name = "streetAddressLabel";
-            streetAddressLabel.Size = new System.Drawing.Size(79, 13);
+            streetAddressLabel.Size = new System.Drawing.Size(117, 16);
             streetAddressLabel.TabIndex = 102;
             streetAddressLabel.Text = "Street Address:";
             // 
             // taxExemptNoLabel
             // 
             taxExemptNoLabel.AutoSize = true;
-            taxExemptNoLabel.Location = new System.Drawing.Point(336, 165);
+            taxExemptNoLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            taxExemptNoLabel.Location = new System.Drawing.Point(14, 232);
             taxExemptNoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             taxExemptNoLabel.Name = "taxExemptNoLabel";
-            taxExemptNoLabel.Size = new System.Drawing.Size(83, 13);
+            taxExemptNoLabel.Size = new System.Drawing.Size(124, 16);
             taxExemptNoLabel.TabIndex = 127;
             taxExemptNoLabel.Text = "Tax Exempt No:";
             // 
@@ -349,7 +349,6 @@
             this.dgvCustomers.Size = new System.Drawing.Size(213, 319);
             this.dgvCustomers.TabIndex = 0;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
-            this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             this.dgvCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellDoubleClick);
             // 
             // GenerateReportButton
@@ -412,7 +411,7 @@
             this.tabShow.Location = new System.Drawing.Point(4, 22);
             this.tabShow.Name = "tabShow";
             this.tabShow.Padding = new System.Windows.Forms.Padding(3);
-            this.tabShow.Size = new System.Drawing.Size(771, 376);
+            this.tabShow.Size = new System.Drawing.Size(716, 376);
             this.tabShow.TabIndex = 2;
             this.tabShow.Text = "Shows";
             // 
@@ -685,7 +684,7 @@
             this.tabOrder.Location = new System.Drawing.Point(4, 22);
             this.tabOrder.Name = "tabOrder";
             this.tabOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOrder.Size = new System.Drawing.Size(771, 376);
+            this.tabOrder.Size = new System.Drawing.Size(716, 376);
             this.tabOrder.TabIndex = 1;
             this.tabOrder.Text = "Orders";
             // 
@@ -786,9 +785,10 @@
             // 
             // tabCustomer
             // 
-            this.tabCustomer.BackColor = System.Drawing.SystemColors.Control;
-            this.tabCustomer.Controls.Add(this.button5);
-            this.tabCustomer.Controls.Add(this.button4);
+            this.tabCustomer.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tabCustomer.Controls.Add(this.btnCancel);
+            this.tabCustomer.Controls.Add(this.btnDeleteCustomer);
+            this.tabCustomer.Controls.Add(this.btnEditCustomer);
             this.tabCustomer.Controls.Add(this.btnAddCustomer);
             this.tabCustomer.Controls.Add(this.creditTextBox);
             this.tabCustomer.Controls.Add(this.cboPatternPreference);
@@ -815,7 +815,6 @@
             this.tabCustomer.Controls.Add(mobilePhoneLabel);
             this.tabCustomer.Controls.Add(patternPreferenecLabel);
             this.tabCustomer.Controls.Add(totalSpentLabel);
-            this.tabCustomer.Controls.Add(isHostLabel);
             this.tabCustomer.Controls.Add(this.isHostCheckBox);
             this.tabCustomer.Controls.Add(creditLabel);
             this.tabCustomer.Controls.Add(notesLabel);
@@ -830,37 +829,53 @@
             this.tabCustomer.Location = new System.Drawing.Point(4, 22);
             this.tabCustomer.Name = "tabCustomer";
             this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomer.Size = new System.Drawing.Size(771, 376);
+            this.tabCustomer.Size = new System.Drawing.Size(716, 376);
             this.tabCustomer.TabIndex = 0;
             this.tabCustomer.Text = "Customers";
             // 
-            // button5
+            // btnCancel
             // 
-            this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(629, 277);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 40);
-            this.button5.TabIndex = 134;
-            this.button5.Text = "Delete Customer";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Location = new System.Drawing.Point(152, 347);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(121, 23);
+            this.btnCancel.TabIndex = 135;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button4
+            // btnDeleteCustomer
             // 
-            this.button4.BackColor = System.Drawing.Color.CadetBlue;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(629, 158);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 40);
-            this.button4.TabIndex = 133;
-            this.button4.Text = "Save Changes";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.BackColor = System.Drawing.Color.Tomato;
+            this.btnDeleteCustomer.Enabled = false;
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(538, 159);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(120, 40);
+            this.btnDeleteCustomer.TabIndex = 134;
+            this.btnDeleteCustomer.Text = "Delete Customer";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.BackColor = System.Drawing.Color.LightYellow;
+            this.btnEditCustomer.Enabled = false;
+            this.btnEditCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCustomer.Location = new System.Drawing.Point(538, 76);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(120, 40);
+            this.btnEditCustomer.TabIndex = 133;
+            this.btnEditCustomer.Text = "Edit Customer";
+            this.btnEditCustomer.UseVisualStyleBackColor = false;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCustomer.Location = new System.Drawing.Point(629, 39);
+            this.btnAddCustomer.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnAddCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCustomer.Location = new System.Drawing.Point(538, 14);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(120, 40);
             this.btnAddCustomer.TabIndex = 132;
@@ -871,158 +886,195 @@
             // creditTextBox
             // 
             this.creditTextBox.DecimalPlaces = 2;
-            this.creditTextBox.Location = new System.Drawing.Point(212, 247);
+            this.creditTextBox.Enabled = false;
+            this.creditTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditTextBox.Location = new System.Drawing.Point(166, 280);
             this.creditTextBox.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.creditTextBox.Name = "creditTextBox";
-            this.creditTextBox.Size = new System.Drawing.Size(104, 20);
+            this.creditTextBox.Size = new System.Drawing.Size(107, 22);
             this.creditTextBox.TabIndex = 129;
             // 
             // cboPatternPreference
             // 
             this.cboPatternPreference.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPatternPreference.Enabled = false;
+            this.cboPatternPreference.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPatternPreference.FormattingEnabled = true;
-            this.cboPatternPreference.Location = new System.Drawing.Point(209, 164);
+            this.cboPatternPreference.Location = new System.Drawing.Point(166, 196);
             this.cboPatternPreference.Name = "cboPatternPreference";
-            this.cboPatternPreference.Size = new System.Drawing.Size(104, 21);
+            this.cboPatternPreference.Size = new System.Drawing.Size(107, 25);
             this.cboPatternPreference.TabIndex = 116;
             // 
             // taxExemptNoTextBox
             // 
-            this.taxExemptNoTextBox.Location = new System.Drawing.Point(431, 158);
+            this.taxExemptNoTextBox.Enabled = false;
+            this.taxExemptNoTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxExemptNoTextBox.Location = new System.Drawing.Point(167, 228);
             this.taxExemptNoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.taxExemptNoTextBox.MaxLength = 30;
             this.taxExemptNoTextBox.Name = "taxExemptNoTextBox";
-            this.taxExemptNoTextBox.Size = new System.Drawing.Size(106, 20);
+            this.taxExemptNoTextBox.Size = new System.Drawing.Size(106, 22);
             this.taxExemptNoTextBox.TabIndex = 118;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(202, 136);
+            this.emailTextBox.Enabled = false;
+            this.emailTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.Location = new System.Drawing.Point(125, 155);
             this.emailTextBox.MaxLength = 50;
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(180, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(316, 22);
             this.emailTextBox.TabIndex = 114;
             // 
             // txtStreetAddressTextBox
             // 
-            this.txtStreetAddressTextBox.Location = new System.Drawing.Point(202, 50);
+            this.txtStreetAddressTextBox.Enabled = false;
+            this.txtStreetAddressTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreetAddressTextBox.Location = new System.Drawing.Point(134, 45);
             this.txtStreetAddressTextBox.MaxLength = 100;
             this.txtStreetAddressTextBox.Name = "txtStreetAddressTextBox";
-            this.txtStreetAddressTextBox.Size = new System.Drawing.Size(104, 20);
+            this.txtStreetAddressTextBox.Size = new System.Drawing.Size(294, 22);
             this.txtStreetAddressTextBox.TabIndex = 103;
             // 
             // stateTextBox
             // 
-            this.stateTextBox.Location = new System.Drawing.Point(203, 79);
+            this.stateTextBox.Enabled = false;
+            this.stateTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateTextBox.Location = new System.Drawing.Point(219, 72);
             this.stateTextBox.MaxLength = 2;
             this.stateTextBox.Name = "stateTextBox";
-            this.stateTextBox.Size = new System.Drawing.Size(104, 20);
+            this.stateTextBox.Size = new System.Drawing.Size(36, 22);
             this.stateTextBox.TabIndex = 107;
             // 
             // zipTextBox
             // 
-            this.zipTextBox.Location = new System.Drawing.Point(431, 71);
+            this.zipTextBox.Enabled = false;
+            this.zipTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zipTextBox.Location = new System.Drawing.Point(322, 68);
             this.zipTextBox.MaxLength = 10;
             this.zipTextBox.Name = "zipTextBox";
-            this.zipTextBox.Size = new System.Drawing.Size(106, 20);
+            this.zipTextBox.Size = new System.Drawing.Size(106, 22);
             this.zipTextBox.TabIndex = 109;
             // 
             // homePhoneTextBox
             // 
-            this.homePhoneTextBox.Location = new System.Drawing.Point(202, 110);
+            this.homePhoneTextBox.Enabled = false;
+            this.homePhoneTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homePhoneTextBox.Location = new System.Drawing.Point(127, 126);
             this.homePhoneTextBox.MaxLength = 20;
             this.homePhoneTextBox.Name = "homePhoneTextBox";
-            this.homePhoneTextBox.Size = new System.Drawing.Size(104, 20);
+            this.homePhoneTextBox.Size = new System.Drawing.Size(112, 22);
             this.homePhoneTextBox.TabIndex = 111;
             // 
             // mobilePhoneTextBox
             // 
-            this.mobilePhoneTextBox.Location = new System.Drawing.Point(430, 97);
+            this.mobilePhoneTextBox.Enabled = false;
+            this.mobilePhoneTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobilePhoneTextBox.Location = new System.Drawing.Point(335, 125);
             this.mobilePhoneTextBox.MaxLength = 20;
             this.mobilePhoneTextBox.Name = "mobilePhoneTextBox";
-            this.mobilePhoneTextBox.Size = new System.Drawing.Size(106, 20);
+            this.mobilePhoneTextBox.Size = new System.Drawing.Size(106, 22);
             this.mobilePhoneTextBox.TabIndex = 113;
             // 
             // patternPreferenecTextBox
             // 
-            this.patternPreferenecTextBox.Location = new System.Drawing.Point(209, 163);
+            this.patternPreferenecTextBox.Enabled = false;
+            this.patternPreferenecTextBox.Location = new System.Drawing.Point(169, 197);
             this.patternPreferenecTextBox.Name = "patternPreferenecTextBox";
             this.patternPreferenecTextBox.Size = new System.Drawing.Size(104, 20);
             this.patternPreferenecTextBox.TabIndex = 119;
             // 
             // totalSpentTextBox
             // 
-            this.totalSpentTextBox.Location = new System.Drawing.Point(212, 195);
+            this.totalSpentTextBox.Enabled = false;
+            this.totalSpentTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSpentTextBox.Location = new System.Drawing.Point(167, 253);
             this.totalSpentTextBox.Name = "totalSpentTextBox";
-            this.totalSpentTextBox.Size = new System.Drawing.Size(104, 20);
+            this.totalSpentTextBox.Size = new System.Drawing.Size(106, 22);
             this.totalSpentTextBox.TabIndex = 120;
             // 
             // notesTextBox
             // 
-            this.notesTextBox.Location = new System.Drawing.Point(430, 191);
+            this.notesTextBox.Enabled = false;
+            this.notesTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesTextBox.Location = new System.Drawing.Point(304, 215);
             this.notesTextBox.MaxLength = 255;
             this.notesTextBox.Multiline = true;
             this.notesTextBox.Name = "notesTextBox";
-            this.notesTextBox.Size = new System.Drawing.Size(155, 100);
+            this.notesTextBox.Size = new System.Drawing.Size(377, 134);
             this.notesTextBox.TabIndex = 121;
             // 
             // customerNoTextBox
             // 
-            this.customerNoTextBox.Location = new System.Drawing.Point(476, 217);
+            this.customerNoTextBox.Enabled = false;
+            this.customerNoTextBox.Location = new System.Drawing.Point(374, 233);
             this.customerNoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.customerNoTextBox.Name = "customerNoTextBox";
             this.customerNoTextBox.Size = new System.Drawing.Size(76, 20);
             this.customerNoTextBox.TabIndex = 128;
+            this.customerNoTextBox.Text = "0";
             // 
             // txtCityCustomer
             // 
-            this.txtCityCustomer.Location = new System.Drawing.Point(431, 45);
+            this.txtCityCustomer.Enabled = false;
+            this.txtCityCustomer.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCityCustomer.Location = new System.Drawing.Point(67, 74);
             this.txtCityCustomer.Name = "txtCityCustomer";
-            this.txtCityCustomer.Size = new System.Drawing.Size(105, 20);
+            this.txtCityCustomer.Size = new System.Drawing.Size(91, 22);
             this.txtCityCustomer.TabIndex = 24;
             this.txtCityCustomer.TextChanged += new System.EventHandler(this.txtCityCustomer_TextChanged);
             // 
             // txtLastNameCustomer
             // 
-            this.txtLastNameCustomer.Location = new System.Drawing.Point(430, 13);
+            this.txtLastNameCustomer.Enabled = false;
+            this.txtLastNameCustomer.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastNameCustomer.Location = new System.Drawing.Point(322, 16);
             this.txtLastNameCustomer.Name = "txtLastNameCustomer";
-            this.txtLastNameCustomer.Size = new System.Drawing.Size(106, 20);
+            this.txtLastNameCustomer.Size = new System.Drawing.Size(106, 22);
             this.txtLastNameCustomer.TabIndex = 22;
             this.txtLastNameCustomer.TextChanged += new System.EventHandler(this.txtLastNameCustomer_TextChanged);
             // 
             // txtFirstNameCustomer
             // 
-            this.txtFirstNameCustomer.Location = new System.Drawing.Point(202, 20);
+            this.txtFirstNameCustomer.Enabled = false;
+            this.txtFirstNameCustomer.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstNameCustomer.Location = new System.Drawing.Point(108, 14);
             this.txtFirstNameCustomer.Name = "txtFirstNameCustomer";
-            this.txtFirstNameCustomer.Size = new System.Drawing.Size(105, 20);
+            this.txtFirstNameCustomer.Size = new System.Drawing.Size(105, 22);
             this.txtFirstNameCustomer.TabIndex = 20;
             this.txtFirstNameCustomer.TextChanged += new System.EventHandler(this.txtFirstNameCustomer_TextChanged);
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(109, 138);
+            this.emailLabel.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(15, 159);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(35, 13);
+            this.emailLabel.Size = new System.Drawing.Size(56, 16);
             this.emailLabel.TabIndex = 126;
             this.emailLabel.Text = "Email:";
             // 
             // isHostCheckBox
             // 
-            this.isHostCheckBox.Location = new System.Drawing.Point(212, 219);
+            this.isHostCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.isHostCheckBox.Enabled = false;
+            this.isHostCheckBox.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isHostCheckBox.Location = new System.Drawing.Point(15, 309);
             this.isHostCheckBox.Name = "isHostCheckBox";
-            this.isHostCheckBox.Size = new System.Drawing.Size(103, 24);
+            this.isHostCheckBox.Size = new System.Drawing.Size(82, 24);
             this.isHostCheckBox.TabIndex = 123;
+            this.isHostCheckBox.Text = "Host";
             this.isHostCheckBox.UseVisualStyleBackColor = true;
             // 
             // nudTotalSpent
             // 
             this.nudTotalSpent.DecimalPlaces = 2;
-            this.nudTotalSpent.Location = new System.Drawing.Point(209, 329);
+            this.nudTotalSpent.Enabled = false;
+            this.nudTotalSpent.Location = new System.Drawing.Point(349, 264);
             this.nudTotalSpent.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -1036,7 +1088,8 @@
             // cbTaxExemptCustomer
             // 
             this.cbTaxExemptCustomer.AutoSize = true;
-            this.cbTaxExemptCustomer.Location = new System.Drawing.Point(339, 332);
+            this.cbTaxExemptCustomer.Enabled = false;
+            this.cbTaxExemptCustomer.Location = new System.Drawing.Point(323, 264);
             this.cbTaxExemptCustomer.Name = "cbTaxExemptCustomer";
             this.cbTaxExemptCustomer.Size = new System.Drawing.Size(136, 17);
             this.cbTaxExemptCustomer.TabIndex = 28;
@@ -1047,7 +1100,8 @@
             // cbHostCustomer
             // 
             this.cbHostCustomer.AutoSize = true;
-            this.cbHostCustomer.Location = new System.Drawing.Point(495, 332);
+            this.cbHostCustomer.Enabled = false;
+            this.cbHostCustomer.Location = new System.Drawing.Point(358, 264);
             this.cbHostCustomer.Name = "cbHostCustomer";
             this.cbHostCustomer.Size = new System.Drawing.Size(107, 17);
             this.cbHostCustomer.TabIndex = 27;
@@ -1058,7 +1112,8 @@
             // lblTotalSpentCustomer
             // 
             this.lblTotalSpentCustomer.AutoSize = true;
-            this.lblTotalSpentCustomer.Location = new System.Drawing.Point(109, 331);
+            this.lblTotalSpentCustomer.Enabled = false;
+            this.lblTotalSpentCustomer.Location = new System.Drawing.Point(346, 266);
             this.lblTotalSpentCustomer.Name = "lblTotalSpentCustomer";
             this.lblTotalSpentCustomer.Size = new System.Drawing.Size(94, 13);
             this.lblTotalSpentCustomer.TabIndex = 25;
@@ -1067,36 +1122,40 @@
             // lblCityCustomer
             // 
             this.lblCityCustomer.AutoSize = true;
-            this.lblCityCustomer.Location = new System.Drawing.Point(321, 48);
+            this.lblCityCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCityCustomer.Location = new System.Drawing.Point(15, 73);
             this.lblCityCustomer.Name = "lblCityCustomer";
-            this.lblCityCustomer.Size = new System.Drawing.Size(30, 13);
+            this.lblCityCustomer.Size = new System.Drawing.Size(46, 16);
             this.lblCityCustomer.TabIndex = 23;
             this.lblCityCustomer.Text = "City: ";
             // 
             // lblLastNameCustomer
             // 
             this.lblLastNameCustomer.AutoSize = true;
-            this.lblLastNameCustomer.Location = new System.Drawing.Point(321, 20);
+            this.lblLastNameCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastNameCustomer.Location = new System.Drawing.Point(227, 14);
             this.lblLastNameCustomer.Name = "lblLastNameCustomer";
-            this.lblLastNameCustomer.Size = new System.Drawing.Size(61, 13);
+            this.lblLastNameCustomer.Size = new System.Drawing.Size(89, 16);
             this.lblLastNameCustomer.TabIndex = 21;
             this.lblLastNameCustomer.Text = "Last Name:";
             // 
             // lblFirstNameCustomer
             // 
             this.lblFirstNameCustomer.AutoSize = true;
-            this.lblFirstNameCustomer.Location = new System.Drawing.Point(109, 23);
+            this.lblFirstNameCustomer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstNameCustomer.Location = new System.Drawing.Point(15, 17);
             this.lblFirstNameCustomer.Name = "lblFirstNameCustomer";
-            this.lblFirstNameCustomer.Size = new System.Drawing.Size(63, 13);
+            this.lblFirstNameCustomer.Size = new System.Drawing.Size(95, 16);
             this.lblFirstNameCustomer.TabIndex = 19;
             this.lblFirstNameCustomer.Text = " First Name:";
             // 
             // btnClearCustomer
             // 
-            this.btnClearCustomer.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnClearCustomer.Location = new System.Drawing.Point(107, 286);
+            this.btnClearCustomer.BackColor = System.Drawing.Color.Silver;
+            this.btnClearCustomer.Enabled = false;
+            this.btnClearCustomer.Location = new System.Drawing.Point(12, 347);
             this.btnClearCustomer.Name = "btnClearCustomer";
-            this.btnClearCustomer.Size = new System.Drawing.Size(275, 23);
+            this.btnClearCustomer.Size = new System.Drawing.Size(126, 23);
             this.btnClearCustomer.TabIndex = 18;
             this.btnClearCustomer.Text = "Clear";
             this.btnClearCustomer.UseVisualStyleBackColor = false;
@@ -1111,7 +1170,7 @@
             this.tabHolder.Location = new System.Drawing.Point(247, 12);
             this.tabHolder.Name = "tabHolder";
             this.tabHolder.SelectedIndex = 0;
-            this.tabHolder.Size = new System.Drawing.Size(779, 402);
+            this.tabHolder.Size = new System.Drawing.Size(724, 402);
             this.tabHolder.TabIndex = 1;
             this.tabHolder.SelectedIndexChanged += new System.EventHandler(this.tabHolder_SelectedIndexChanged);
             // 
@@ -1130,7 +1189,7 @@
             this.tabExpenses.Location = new System.Drawing.Point(4, 22);
             this.tabExpenses.Name = "tabExpenses";
             this.tabExpenses.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExpenses.Size = new System.Drawing.Size(771, 376);
+            this.tabExpenses.Size = new System.Drawing.Size(716, 376);
             this.tabExpenses.TabIndex = 3;
             this.tabExpenses.Text = "Expenses";
             // 
@@ -1295,8 +1354,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.TabPage tabCustomer;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.NumericUpDown creditTextBox;
         private System.Windows.Forms.ComboBox cboPatternPreference;
@@ -1334,5 +1393,6 @@
         private System.Windows.Forms.Label lblSortByExpense;
         private System.Windows.Forms.DataGridView dgvExpenses;
         private System.Windows.Forms.Button btnSearchClear;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

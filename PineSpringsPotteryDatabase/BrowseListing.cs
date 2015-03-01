@@ -14,7 +14,7 @@ namespace PineSpringsPotteryDatabase
     public partial class BrowseListing : Form
     {
         //instance variables
-        private readonly string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\PineSpringsPottery.accdb";
+        private readonly string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\PineSpringsPottery.accdb;Persist Security Info=False;";
         private OleDbConnection connection;
         private string expenseSelect;           //dynamic select of expenses
         private string customerSelect;          //dynamic select of customers
@@ -120,7 +120,19 @@ namespace PineSpringsPotteryDatabase
             ////show all lists and tabs
             //else
             //{
-               loadData();
+
+            loadData();
+            List<Pattern> patterns = new List<Pattern>();
+            Pattern noPattern = new Pattern();
+            patterns = DatabaseAccess.GetPatterns();
+            noPattern.patternName = "";
+            noPattern.patternNo = 0;
+            patterns.Insert(0, noPattern);
+            cboPatternPreference.DataSource = patterns;
+
+
+
+
             //}
         }
 
@@ -231,10 +243,25 @@ namespace PineSpringsPotteryDatabase
         {
             txtFirstNameCustomer.Text = "";
             txtLastNameCustomer.Text = "";
+            
+            txtStreetAddressTextBox.Text = "";
             txtCityCustomer.Text = "";
-            nudTotalSpent.Value = 0;
+            stateTextBox.Text = "";
+            zipTextBox.Text = "";
+
+            homePhoneTextBox.Text = "";
+            mobilePhoneTextBox.Text = "";
+            emailTextBox.Text = "";
+
+            cboPatternPreference.SelectedIndex = 0;
+            taxExemptNoTextBox.Text = "";
+
             cbHostCustomer.Checked = false;
-            cbTaxExemptCustomer.Checked = false;
+            creditTextBox.Value = 0;
+
+            totalSpentTextBox.Text = "";
+            isHostCheckBox.Checked = false;
+            notesTextBox.Text = "";
         }
 
         //when first name search changes - refresh data
@@ -735,38 +762,6 @@ namespace PineSpringsPotteryDatabase
             txtSearch.Text = "";
         }
 
-        //check for duplicate customers
-        private void searchCustomer()
-        {
-           
-            //select all data in dvgCustomers, cycle through looking for dublicate
-            //first and last name for the customer that the user is trying to 
-            //enter into the db. If duplicate data is found ask your if it is the 
-            //same customer or new customer with same name.
-            //**************************************************************
-            dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            foreach (DataGridViewRow row in dgvCustomers.Rows)
-            {
-                if (row.Cells[1].Value.ToString().Equals(txtFirstNameCustomer.Text.TrimEnd()) && row.Cells[2].Value.ToString().Equals(txtLastNameCustomer.Text.TrimEnd()))
-                {
-                    
-                    DialogResult result = MessageBox.Show("This customer name already exist.\r\n"
-                        + "Please check the customer address below.\r\n\r\n"
-                        + row.Cells[1].Value.ToString()
-                        + " " + row.Cells[2].Value.ToString() + "\r\n" + row.Cells[3].Value.ToString() + "\r\n"
-                        + row.Cells[4].Value.ToString() + ", " + row.Cells[5].Value.ToString() + " "
-                        + row.Cells[6].Value.ToString()
-                        + "\r\n\r\nAre they the same customer?",
-                        "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result == DialogResult.Yes)
-                    break;
-             //********************************************************
-                    // continue search to see if any more duplicates 
-                    // then write to db
-                }
-            }
-        }
-
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -799,22 +794,123 @@ namespace PineSpringsPotteryDatabase
                 }
 
             }
-                loadData();
+            btnEditCustomer.Enabled = true;
+            btnDeleteCustomer.Enabled = true;
+            loadData();
+           
 
 
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            string searchData = txtSearch.Text;//hold user search critera
-            //clear the search info to restore full datalist for dgvCustomer
-            btnSearchClear_Click(this,e);
-            //look for duplicate
-            searchCustomer();
-            //return user search critera
-            txtSearch.Text = searchData;
-        }
+            if(btnAddCustomer.Text =="Add Customer")
+            {
+                dgvCustomers.Enabled = false;
+                btnEditCustomer.Enabled = false;
+                btnDeleteCustomer.Enabled = false;
+                txtSearch.Enabled = false;
 
+                btnClearCustomer.Enabled = true;
+                btnCancel.Enabled = true;
+                enableCustomerInfo();
+
+                btnAddCustomer.Text="Save New Customer";
+                btnClearCustomer_Click(this, e);
+                txtFirstNameCustomer.Select();
+
+            }
+            else
+            {
+                if (validateCustomerInfo())
+                {
+                    string searchData = txtSearch.Text;//hold user search critera
+                    btnSearchClear_Click(this, e); //clear the search info to restore full datalist for dgvCustomer
+                    addCustomer();
+                    txtSearch.Text = searchData;//return user search critera
+
+                    dgvCustomers.Enabled = true;
+                    btnEditCustomer.Enabled = false;
+                    btnDeleteCustomer.Enabled = false;
+                    txtSearch.Enabled = true;
+
+                    btnClearCustomer.Enabled = false;
+                    btnCancel.Enabled = false;
+                    disableCustomerInfo();
+
+                    btnAddCustomer.Text = "Add Customer";
+                    btnClearCustomer_Click(this, e);
+                }
+
+            }
+
+
+        }
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            if (btnEditCustomer.Text == "Edit Customer")
+            {
+                dgvCustomers.Enabled = false;
+                btnAddCustomer.Enabled = false;
+                btnDeleteCustomer.Enabled = false;
+                txtSearch.Enabled = false;
+
+                btnClearCustomer.Enabled = false;
+                btnCancel.Enabled = true;
+                enableCustomerInfo();
+
+                btnEditCustomer.Text = "Save Changes";
+                
+                txtFirstNameCustomer.Select();
+
+            }
+            else
+            {
+                if (validateCustomerInfo())
+                {
+                    if (validateCustomerInfo())
+                    {
+
+                        editCustomer();
+
+                        dgvCustomers.Enabled = true;
+                        btnAddCustomer.Enabled = true;
+                        btnEditCustomer.Enabled = false;
+                        btnDeleteCustomer.Enabled = false;
+                        txtSearch.Enabled = true;
+
+                        btnClearCustomer.Enabled = false;
+                        btnCancel.Enabled = false;
+                        disableCustomerInfo();
+
+                        btnEditCustomer.Text = "Edit Customer";
+                        btnClearCustomer_Click(this, e);
+                    }
+                }
+
+            }
+        }
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            DialogResult diag = MessageBox.Show("Are you sure you wish to delete this customer? \n" + txtFirstNameCustomer.Text +
+                " " + txtLastNameCustomer.Text, "ALERT!" , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(diag == DialogResult.Yes)
+            {
+                deleteCustomer();
+            }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnAddCustomer.Enabled = true;
+            btnAddCustomer.Text = "Add Customer";
+            btnEditCustomer.Enabled = false;
+            btnEditCustomer.Text = "Edit Customer";
+            btnDeleteCustomer.Enabled = false;
+            btnClearCustomer.Enabled = false;
+            txtSearch.Enabled = true;
+            dgvCustomers.Enabled = true;
+            btnClearCustomer_Click(this, e);
+        }
         //fill data about customer into appropriate fields such as textboxes and 
         private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -849,7 +945,221 @@ namespace PineSpringsPotteryDatabase
                 }
             }
         }
+
+        private void addCustomer()
+        {
+            try
+            {
+                bool newCustomer = true;
+
+                //select all data in dvgCustomers, cycle through looking for dublicate
+                //first and last name for the customer that the user is trying to 
+                //enter into the db. If duplicate data is found ask your if it is the 
+                //same customer or new customer with same name.
+                //**************************************************************
+                dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                foreach (DataGridViewRow row in dgvCustomers.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(txtFirstNameCustomer.Text.TrimEnd()) && row.Cells[2].Value.ToString().Equals(txtLastNameCustomer.Text.TrimEnd()))
+                    {
+
+                        DialogResult result = MessageBox.Show("This customer name already exist.\r\n"
+                            + "Please check the customer address below.\r\n\r\n"
+                            + row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString() + "\r\n"
+                            + row.Cells[3].Value.ToString() + "\r\n" + row.Cells[4].Value.ToString()
+                            + ", " + row.Cells[5].Value.ToString() + " " + row.Cells[6].Value.ToString()
+                            + "\r\n\r\nAre they the same customer?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (result == DialogResult.Yes)
+                        {
+                            newCustomer = false;
+                            break;
+                        }
+                        // continue search to see if any more duplicates then write to db
+                    }
+                    }
+                if (newCustomer)
+                {
+                    Customer customer = new Customer();
+                    customer = getCustomerInfo();
+                    int host;
+                    if (customer.isHost)
+                    {
+                        host = -1;
+                    }
+                    else
+                    {
+                        host = 0;
+                    }
+                    string insertStatement = "INSERT into CUSTOMER (FirstName, LastName, StreetAddress, City, State, Zip," +
+                        " HomePhone, MobilePhone, Email, PatternPreference, isHost, Credit, Notes, TaxExemptNo) " +
+                        "Values('" + customer.firstName + "'," + "'" + customer.lastName + "'," + "'" + customer.street + "'," +
+                               "'" + customer.city + "'," + "'" + customer.state + "'," + "'" + customer.zip + "'," +
+                               "'" + customer.homePhone + "'," + "'" + customer.mobilePhone + "'," + "'" + customer.email + "'," +
+                               "'" + customer.patternPreferenceNo + "'," +  "'" + host + "'," + "'" + customer.credit + "'," +
+                               "'" + customer.notes + "'," + "'" + customer.taxExemptNo + "'" + ")";
+                    connection.Open();
+                    OleDbCommand command = new OleDbCommand();
+                    command.Connection = connection;
+                    command.CommandText = insertStatement;
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Customer Added", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("An Error has occured. Please check that your access database is not open \n" +
+                    e.ToString() , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void editCustomer()
+        {
+            try
+            {
+            Customer customer = new Customer();
+            customer = getCustomerInfo();
+            int host;
+            if (customer.isHost)
+            {
+                host = -1;
+            }
+            else
+            {
+                host = 0;
+            }
+            string updateStatement = "UPDATE CUSTOMER SET " +
+                                     "FirstName = '" + customer.firstName+"' ," +
+                                     "LastName ='" + customer.lastName + "' ," +
+                                     "StreetAddress = '" + customer.street + "' ," +
+                                     "City= '" + customer.city + "' ," +
+                                     "State= '" + customer.state + "' ," +
+                                     "Zip = '" + customer.zip + "' ," +
+                                     "HomePhone= '" + customer.homePhone + "' ," +
+                                     "MobilePhone ='" + customer.mobilePhone + "' ," +
+                                     "Email= '" + customer.email + "' ," +
+                                     "PatternPreference= '" + customer.patternPreferenceNo + "' ," +
+                                     "isHost= '" + host + "' ," +
+                                     "Credit= '" + customer.credit + "' ," +
+                                     "Notes= '" + customer.notes + "' ," +
+                                     "TaxExemptNo='" + customer.taxExemptNo + "' " +
+                                     "WHERE CustomerNo =" + customerNoTextBox.Text;
+            connection.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = connection;
+            command.CommandText = updateStatement;
+            command.ExecuteNonQuery();
+            MessageBox.Show("Customer updated", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("An Error has occured. Please check that your access database is not open \n" +
+                                    e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void deleteCustomer()
+        {
+            try
+            {
+
+                string deleteStatement = "DELETE from CUSTOMER where CustomerNo=" + customerNoTextBox.Text;
+                connection.Open();
+                OleDbCommand command = new OleDbCommand();
+                command.Connection = connection;
+                command.CommandText = deleteStatement;
+                command.ExecuteNonQuery();
+                MessageBox.Show("Customer Deleted", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("An Error has occured. Please check that your access database is not open \n" +
+                                    e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private Customer getCustomerInfo()
+        {
+            Customer customer = new Customer();
+
+            customer.firstName=txtFirstNameCustomer.Text;
+            customer.lastName=txtLastNameCustomer.Text;
+            customer.street=txtStreetAddressTextBox.Text;
+            customer.city=txtCityCustomer.Text;
+            customer.state=stateTextBox.Text;
+            customer.zip =zipTextBox.Text;
+            customer.homePhone= homePhoneTextBox.Text;
+            customer.mobilePhone=mobilePhoneTextBox.Text;
+            customer.email=emailTextBox.Text;
+            if(cboPatternPreference.SelectedIndex < 0)
+            {
+                customer.patternPreferenceNo = 17;
+            }
+            else
+            {
+                customer.patternPreferenceNo = cboPatternPreference.SelectedIndex +1;
+            }
+            customer.isHost= isHostCheckBox.Checked;
+            customer.credit=creditTextBox.Value;
+            customer.notes=notesTextBox.Text;
+            customer.taxExemptNo=taxExemptNoTextBox.Text;
+
+            return customer;
+        }
+        private void enableCustomerInfo()
+        {
+            txtFirstNameCustomer.Enabled = true;
+            txtLastNameCustomer.Enabled = true;
+            txtStreetAddressTextBox.Enabled = true;
+            txtCityCustomer.Enabled = true;
+            stateTextBox.Enabled = true;
+            zipTextBox.Enabled = true;
+            homePhoneTextBox.Enabled = true;
+            mobilePhoneTextBox.Enabled = true;
+            emailTextBox.Enabled = true;
+            
+            patternPreferenecTextBox.Enabled = true;
+            isHostCheckBox.Enabled = true;
+            creditTextBox.Enabled = true;
+            notesTextBox.Enabled = true;
+            taxExemptNoTextBox.Enabled = true;
+            cboPatternPreference.Enabled = true;
+
+        }
+        private void disableCustomerInfo()
+        {
+            txtFirstNameCustomer.Enabled = false;
+            txtLastNameCustomer.Enabled = false;
+            txtStreetAddressTextBox.Enabled = false;
+            txtCityCustomer.Enabled = false;
+            stateTextBox.Enabled = false;
+            zipTextBox.Enabled = false;
+            homePhoneTextBox.Enabled = false;
+            mobilePhoneTextBox.Enabled = false;
+            emailTextBox.Enabled = false;
+
+            patternPreferenecTextBox.Enabled = false;
+            isHostCheckBox.Enabled = false;
+            creditTextBox.Enabled = false;
+            notesTextBox.Enabled = false;
+            taxExemptNoTextBox.Enabled = false;
+            cboPatternPreference.Enabled = false;
+
+        }
+        private bool validateCustomerInfo()
+        {
+            bool isValid =true;
+            if(txtFirstNameCustomer.Text=="" || txtLastNameCustomer.Text=="")
+            {
+                MessageBox.Show("Customer first or last name missing", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;
+            }
+            return isValid;
+        }
         #endregion
+
+        
+
+
+
+
 
 
 

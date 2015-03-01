@@ -337,7 +337,7 @@ namespace PineSpringsPotteryDatabase
             string selectStatement = "SELECT  PATTERN.PatternNo, PATTERN.PatternName, PATTERN.PatternPicture.FileName, PATTERN.PatternPicture.FileData " +
                 "FROM PATTERN ORDER BY PatternName;";
 
-            List<Pattern> patterns = new List<Pattern>();
+            List<Pattern> patterns = new List<Pattern>(30);
             //Create Command for select statement
             OleDbCommand selectCmd = new OleDbCommand(selectStatement, connection);
 

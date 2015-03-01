@@ -1,0 +1,33 @@
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.exe.config
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPottery.accdb
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.exe.manifest
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.application
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.exe
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.pdb
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.AddExpense.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.AddExpenseType.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.BrowseListing.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.Catalog.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.CustomerInformation.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.CustomerPurchases.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.Generate_Reports.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.NewPattern.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.NewPiece.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.NewShow.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.Search.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.WebBrowser.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.ViewWishList.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.MainMenu.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.NewOrder.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.Properties.Resources.resources
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.csproj.GenerateResource.Cache
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\RdlCompile.cache
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\RdlCompile.compiled
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.exe.manifest
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.application
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.exe
+C:\Users\Keith\Desktop\Homework\CIS 411\Pine Mockup\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.pdb
+C:\Users\Keith\Documents\GitHub\Pine-Springs-Pottery\PineSpringsPotteryDatabase\bin\Debug\PineSpringsPotteryDatabase.exe.config
+C:\Users\Keith\Documents\GitHub\Pine-Springs-Pottery\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.exe
+C:\Users\Keith\Documents\GitHub\Pine-Springs-Pottery\PineSpringsPotteryDatabase\obj\Debug\PineSpringsPotteryDatabase.pdb

@@ -188,14 +188,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PineSpringsPotteryDatabase.exe" size="2446336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PineSpringsPotteryDatabase.exe" size="2450944">
       <assemblyIdentity name="PineSpringsPotteryDatabase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SRmu7GsrzWoaqv+cnsyVErx0VhpTA86NsscaWKJSBFI=</dsig:DigestValue>
+        <dsig:DigestValue>O1P5SI51sXz2/lr1cXJyX2d51i8VIUbbhZ8uZ6kwvrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -214,7 +214,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NaVmjweURGqE3UIMOUqCoD/UBpkrBgBabnMzazRg1es=</dsig:DigestValue>
+      <dsig:DigestValue>w8lIaJkQyTs9wE+GvzglE+tznAP0bhmyg2Miww60jO8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="PineSpringsPotteryDatabase.exe.config" size="554">
