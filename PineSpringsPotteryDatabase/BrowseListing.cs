@@ -696,13 +696,9 @@ namespace PineSpringsPotteryDatabase
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            NewOrder newOrderForm = new NewOrder(0); 
-            if (newOrderForm == null || newOrderForm.IsDisposed)
-                newOrderForm = new NewOrder(0);
-            newOrderForm.Show();
-            newOrderForm.BringToFront();
+           
         }
 
         private void btnCatalog_Click(object sender, EventArgs e)
@@ -856,6 +852,7 @@ namespace PineSpringsPotteryDatabase
         private bool newOrder = false;
         private bool editing = false;
         string selectStatement = "";
+        int isNewOrder = 0;
 
         //show line items in datagrid view
         private void displayLineItems()

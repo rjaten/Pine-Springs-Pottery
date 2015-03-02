@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PineSpringsPotteryDatabase.exe" size="2499072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PineSpringsPotteryDatabase.exe" size="2507776">
       <assemblyIdentity name="PineSpringsPotteryDatabase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UyMQSEo2P6eC8++N2el4cZrM0M1OkS4x3KE7XJfX/4o=</dsig:DigestValue>
+        <dsig:DigestValue>9b86tA58e/jtKDEJGu6Gtp+pLco57JKxFXMFC7L6CXg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

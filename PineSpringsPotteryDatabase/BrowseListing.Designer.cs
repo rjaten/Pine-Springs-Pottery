@@ -93,6 +93,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.txtNotes = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.showNoTextBox = new System.Windows.Forms.TextBox();
+            this.orderNoTextBox = new System.Windows.Forms.TextBox();
             this.nudAmountPaid = new System.Windows.Forms.NumericUpDown();
             this.nudShipping = new System.Windows.Forms.NumericUpDown();
             this.lblCheckNo = new System.Windows.Forms.Label();
@@ -115,7 +118,7 @@
             this.taxableCheckBox = new System.Windows.Forms.CheckBox();
             this.cbShipping = new System.Windows.Forms.CheckBox();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNewOrder = new System.Windows.Forms.Button();
             this.nudSubtotal = new System.Windows.Forms.NumericUpDown();
             this.txtShowName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -163,9 +166,6 @@
             this.lblSortByExpense = new System.Windows.Forms.Label();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
             this.btnSearchClear = new System.Windows.Forms.Button();
-            this.orderNoTextBox = new System.Windows.Forms.TextBox();
-            this.showNoTextBox = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             showTypeLabel = new System.Windows.Forms.Label();
@@ -846,7 +846,7 @@
             this.tabOrder.Controls.Add(this.taxableCheckBox);
             this.tabOrder.Controls.Add(this.cbShipping);
             this.tabOrder.Controls.Add(this.dgvOrders);
-            this.tabOrder.Controls.Add(this.button2);
+            this.tabOrder.Controls.Add(this.btnNewOrder);
             this.tabOrder.Controls.Add(this.nudSubtotal);
             this.tabOrder.Controls.Add(this.txtShowName);
             this.tabOrder.Controls.Add(this.label8);
@@ -869,6 +869,30 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(186, 99);
             this.txtNotes.TabIndex = 128;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(83, 155);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 133;
+            // 
+            // showNoTextBox
+            // 
+            this.showNoTextBox.Location = new System.Drawing.Point(84, 128);
+            this.showNoTextBox.Name = "showNoTextBox";
+            this.showNoTextBox.ReadOnly = true;
+            this.showNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.showNoTextBox.TabIndex = 132;
+            // 
+            // orderNoTextBox
+            // 
+            this.orderNoTextBox.Location = new System.Drawing.Point(48, 156);
+            this.orderNoTextBox.Name = "orderNoTextBox";
+            this.orderNoTextBox.ReadOnly = true;
+            this.orderNoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.orderNoTextBox.TabIndex = 131;
             // 
             // nudAmountPaid
             // 
@@ -1089,16 +1113,16 @@
             this.dgvOrders.TabIndex = 0;
             this.dgvOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellDoubleClick);
             // 
-            // button2
+            // btnNewOrder
             // 
-            this.button2.BackColor = System.Drawing.Color.OliveDrab;
-            this.button2.Location = new System.Drawing.Point(610, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 23);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "New Order...";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnNewOrder.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnNewOrder.Location = new System.Drawing.Point(610, 190);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(155, 23);
+            this.btnNewOrder.TabIndex = 48;
+            this.btnNewOrder.Text = "New Order...";
+            this.btnNewOrder.UseVisualStyleBackColor = false;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // nudSubtotal
             // 
@@ -1598,30 +1622,6 @@
             this.btnSearchClear.UseVisualStyleBackColor = true;
             this.btnSearchClear.Click += new System.EventHandler(this.btnSearchClear_Click);
             // 
-            // orderNoTextBox
-            // 
-            this.orderNoTextBox.Location = new System.Drawing.Point(48, 156);
-            this.orderNoTextBox.Name = "orderNoTextBox";
-            this.orderNoTextBox.ReadOnly = true;
-            this.orderNoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.orderNoTextBox.TabIndex = 131;
-            // 
-            // showNoTextBox
-            // 
-            this.showNoTextBox.Location = new System.Drawing.Point(84, 128);
-            this.showNoTextBox.Name = "showNoTextBox";
-            this.showNoTextBox.ReadOnly = true;
-            this.showNoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.showNoTextBox.TabIndex = 132;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(83, 155);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 133;
-            // 
             // BrowseListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1702,7 +1702,7 @@
         private System.Windows.Forms.Button btnClearShows;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabOrder;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.NumericUpDown nudSubtotal;
         private System.Windows.Forms.TextBox txtShowName;
         private System.Windows.Forms.Label label8;
